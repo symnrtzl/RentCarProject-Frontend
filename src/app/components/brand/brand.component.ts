@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Brand } from '../../models/brand/brand';
 import { BrandService } from '../../services/brand.service';
+import { Brand } from '../../models/brand';
 
 @Component({
   selector: 'app-brand',

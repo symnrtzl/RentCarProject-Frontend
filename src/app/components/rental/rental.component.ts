@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Rental } from '../../models/rental/rental';
+import { Rental } from '../../models/rental';
 import { RentalService } from '../../services/rental.service';
 
 @Component({
