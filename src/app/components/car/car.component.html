@@ -1,28 +1,24 @@
-<div class="container">
-    <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
-    <div>
-        <h5>Car</h5>
-        <table class="table table-primary">
-            <thead>
-                <tr>
-                    <td>Car Id</td>
-                    <td>Brand Name</td>
-                    <td>Color Name</td>
-                    <td>Model Year</td>
-                    <td>Description</td>
-                    <td>Daily Price</td>
-                </tr>
-            </thead>
-            <tr *ngFor="let car of cars">
-                <td>{{car.carId}}</td>
-                <td>{{car.brandName}}</td>
-                <td>{{car.colorName}}</td>
-                <td>{{car.modelYear}}</td>
-                <td>{{car.description}}</td>
-                <td>{{car.dailyPrice}}</td>
-            </tr>
-        </table>
-    </div>
+<h4 class="mb-3 text-center ">Araç Listesi</h4>
+
+<div class="row row-cols-1 row-cols-md-3 " style="margin-top: 10px; margin-bottom: 10px;">
+  <div class="col" *ngFor="let car of cardetails">,
+      <div class="card" >
+        <div class="card-body">
+          <img *ngIf="car.imagePath" [src]="baseUrl + car.imagePath" class="card-img-top" />
+          <img *ngIf="!car.imagePath" src="/assets/images/defaultImage.png" class="card-img-top"/>
+          <div>
+            <h5 class="card-title">{{car.brandName}} {{car.modelName}}</h5>
+            <p class="card-text">({{car.colorName}})</p>
+          </div>
+          <div>
+              <p class="card-text">{{car.description}}</p>
+          </div>
+          <div>
+            <button (click)="setCurrentCarDetails(car)" routerLink="/cardetails/car/{{car.carId}}" [class]="getCurrentCarDetails()" class="btn btn-success">Detaylar</button>
+            <button class="btn btn-success">Sepete Ekle</button>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+

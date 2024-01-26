@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <h3>{{carDetails[0].brandName}} - {{carDetails[0].modelName}}</h3>
+        <div class="col">
+            <img *ngIf="carDetails[0].imagePath" [src]="baseUrl + carDetails[0].imagePath" class="card-img-top" />
+            <img *ngIf="!carDetails[0].imagePath" src="/assets/images/defaultImage.png" class="card-img-top"/>
+        </div>
+        <div class="col">
+            <div>
+                <ul class="car-detail">
+                    <li><b>MARKA</b> {{ carDetails[0].brandName }}</li>
+                    <li><b>MODEL</b> {{ carDetails[0].modelName }}</li>
+                    <li><b>MODEL YIL</b> {{ carDetails[0].modelYear }}</li>
+                    <li><b>RENK</b> {{ carDetails[0].colorName }}</li>
+                    <li><b>AÇIKLAMALAR</b> {{ carDetails[0].description }}</li>
+                    <li><b>GÜNLÜK KİRALAMA FİYATI</b> {{ carDetails[0].dailyPrice | currency:"₺"}}</li>
+                </ul>
+            </div>
+            <button class="button">KİRALA</button>
+        </div>
+    </div>
+</div>
